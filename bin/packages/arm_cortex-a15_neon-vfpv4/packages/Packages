@@ -1,0 +1,12 @@
+Package: cgi-io
+Version: 2022-08-10-901b0f04-21
+Depends: libc, libubox20230523, libubus20220615
+License: GPL-2.0-or-later
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 8550
+Filename: cgi-io_2022-08-10-901b0f04-21_arm_cortex-a15_neon-vfpv4.ipk
+Size: 9293
+SHA256sum: 1d4fd9a2854453f272537ed1b1d3aa0dae02dc593f37dd507994578174925bd0
+Description:  This package contains an cgi utility that is useful for up/downloading files
+
