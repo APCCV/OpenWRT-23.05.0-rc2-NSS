@@ -1,3 +1,24 @@
+## TL;DR
+
+An as-close-to-possible vanilla ipq806x OpenWrt 23.05.0-rc2 build with support for NSS cores.
+Key steps to build this thing (although I really don't see why you would need to):
+* Clone repo and cd into it.
+* `./scripts/feeds update -a && ./scripts/feeds install -a`
+* Copy files from **nss-makefile-changes** to `feeds/nss/qca-nss*` appropriate locations overriding existing ones (this addresses issues with module dependencies)
+* `./scripts/feeds install -a`
+* `cp config.nss .config`
+* `make defconfig`
+* `make menuconfig` (optional, but allows to validate that ipq806x device is selected)
+* `make V=s -jx` (where x is # of available virtual cores + 1)
+
+PRE-REQ: due to this bug https://github.com/openwrt/openwrt/issues/12239 install
+`gcc-multilib` on build machine.
+
+Builds are *super* finicky. `make clean` seldom works to restart a failed build. 
+YMMV, but it is far batter to just delete everything and start over again.
+
+## OpenWrt
+
 ![OpenWrt logo](include/logo.png)
 
 OpenWrt Project is a Linux operating system targeting embedded devices. Instead
